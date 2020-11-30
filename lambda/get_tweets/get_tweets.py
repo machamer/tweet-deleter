@@ -18,7 +18,7 @@ def getTweets():
 
     tweets = http.request(
         'GET',
-        'https://api.twitter.com/labs/2/tweets/search?query=%s' %os.environ['query'],
+        'https://api.twitter.com/2/tweets/search/recent?query=%s' %os.environ['query'],
         headers={'Authorization': 'Bearer %s' %token}
     )
     json_tweets = json.loads(tweets.data)
